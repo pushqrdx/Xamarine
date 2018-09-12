@@ -56,7 +56,7 @@ namespace Xamarine.Hosting.Modules
 
         private static string PathResourcerize(string s)
         {
-            return s == "/" ? "index.html" : s.Substring(1, s.Length - 1).Replace('/', '\\');
+            return s == "/" ? "index.html" : s.Substring(1, s.Length - 1);
         }
 
         private async Task<bool> HandleGet(HttpListenerContext context, CancellationToken ct, bool sendBuffer = true)
@@ -70,7 +70,7 @@ namespace Xamarine.Hosting.Modules
 
                 $"Resource System: {localPath}".Debug();
 
-                buffer = _sourceAssembly.GetManifestResourceStream($"{_resourcePathRoot}\\{localPath}");
+                buffer = _sourceAssembly.GetManifestResourceStream($"{_resourcePathRoot}/{localPath}");
 
                 // If buffer is null something is really wrong
                 if (buffer == null)

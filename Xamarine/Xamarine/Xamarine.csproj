@@ -22,15 +22,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
     <Content Remove="wwwroot\**\*.*" />
     <EmbeddedResource Include="wwwroot\**\*.*" />
   </ItemGroup>
-  
+
   <Target Name="ModifyEmbeddedResourceNames" BeforeTargets="CreateManifestResourceNames">
     <ItemGroup>
       <EmbeddedResource>
-        <LogicalName>%(EmbeddedResource.Identity)</LogicalName>
+        <LogicalName>$([System.String]::Copy('%(EmbeddedResource.Identity)').Replace('\', '/'))</LogicalName>
       </EmbeddedResource>
     </ItemGroup>
   </Target>
