@@ -121,7 +121,7 @@ namespace Xamarine.Hosting.Swan.Networking.Ldap
         public static long DecodeNumeric(Stream stream, int len)
         {
             long l = 0;
-            var r = stream.ReadByte();
+            long r = stream.ReadByte();
 
             if (r < 0)
                 throw new EndOfStreamException("LBER: NUMERIC: decode error: EOF");
