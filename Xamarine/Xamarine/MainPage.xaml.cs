@@ -13,6 +13,8 @@ namespace Xamarine
 
         private async void InitializeEmbeddedHost()
         {
+            //var names = typeof(MainPage).Assembly.GetManifestResourceNames();
+
 #pragma warning disable 4014
             Startup.Initialize();
 #pragma warning restore 4014
