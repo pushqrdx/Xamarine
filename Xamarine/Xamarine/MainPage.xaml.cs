@@ -11,7 +11,7 @@ namespace Xamarine
             InitializeEmbeddedHost();
         }
 
-        private async void InitializeEmbeddedHost()
+        private void InitializeEmbeddedHost()
         {
             //var names = typeof(MainPage).Assembly.GetManifestResourceNames();
 
